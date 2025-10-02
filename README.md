@@ -37,7 +37,7 @@ images:
 - Microsoft Windows 8 and 8.1
 - Microsoft Windows 10
 - Linux Kernels 2.6.24 to most recent.
-- OSX 10.7-10.12.x.
+- macOS 10.7-10.15.x (MacPmem kernel extension confirmed working up to macOS 10.15.7).
 
 Rekall also provides a complete memory sample acquisition capability for all
 major operating systems (see the tools directory).
