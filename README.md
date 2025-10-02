@@ -42,45 +42,39 @@ images:
 Rekall also provides a complete memory sample acquisition capability for all
 major operating systems (see the tools directory).
 
-## Quick start
+## Installation (Development Only)
 
-Rekall is available as a python package installable via the pip
-package manager. To install it, first create a virtal env, switch to
-it and then install rekall:
+⚠️ **Note**: Rekall is discontinued and no longer maintained. The PyPI packages are outdated and may not work with modern Python versions.
 
-```
-$ virtualenv  /tmp/MyEnv
-New python executable in /tmp/MyEnv/bin/python
-Installing setuptools, pip...done.
+For development or research purposes, you can install from source:
+
+```bash
+# Create a virtual environment
+$ virtualenv -p python3 /tmp/MyEnv
 $ source /tmp/MyEnv/bin/activate
+
+# Clone this repository (or your fork)
+$ git clone https://github.com/startergo/rekall.git rekall
+$ cd rekall
+
+# Install in development mode (editable installation)
 $ pip install --upgrade setuptools pip wheel
-$ pip install rekall-agent rekall
+$ pip install --editable rekall-lib
+$ pip install --editable rekall-core
+$ pip install --editable rekall-agent
+$ pip install --editable .
 ```
 
-For windows, Rekall is also available as a self contained installer
-package. Please check the download page for the most appropriate installer to
-use [Rekall-Forensic.com](http://www.rekall-forensic.com/)
-
-To install from this git repository you will need to use pip
---editable and follow the correct order of installation (otherwise pip
-will pull released dependencies which might be older):
-
-```
-$ virtualenv  /tmp/MyEnv
-New python executable in /tmp/MyEnv/bin/python
-Installing setuptools, pip...done.
-$ source /tmp/MyEnv/bin/activate
-$ pip install --upgrade setuptools pip wheel
+**Alternative**: Use the original Google repository:
+```bash
 $ git clone https://github.com/google/rekall.git rekall
-$ pip install --editable rekall/rekall-lib
-$ pip install --editable rekall/rekall-core
-$ pip install --editable rekall/rekall-agent
-$ pip install --editable rekall
 ```
 
-On Windows you will need to install the Microsoft Visual C compilers
-for python (for more info see this blog post
-http://rekall-forensic.blogspot.ch/2015/09/installing-rekall-on-windows.html)
+**macOS Users**: See the `osx/Rekall/README.md` and `tools/osx/MacPmem/README.md` for building the macOS-specific components (GUI app and kernel extension).
+
+**Windows Users**: You may need Microsoft Visual C++ compilers for Python. The original blog post referenced above may no longer be available due to project discontinuation.
+
+**Important**: Since Rekall is discontinued, expect compatibility issues with modern Python versions and dependencies. This installation is primarily for research, development, or educational purposes.
 
 ## Mailing Lists
 
