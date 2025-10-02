@@ -5,6 +5,43 @@ MacPmem enables read/write access to physical memory on OS X 10.8 through
 operating system and hardware it's running on through a informational device and
 sysctl interface.
 
+## Building
+
+### Prerequisites
+
+- Xcode with kernel extension development support
+- macOS development environment  
+- x86_64 architecture support
+
+### Compilation
+
+To build the MacPmem kernel extension:
+
+```bash
+# Navigate to the MacPmem directory
+cd tools/osx/MacPmem
+
+# Build for x86_64 architecture
+xcodebuild -project MacPmem.xcodeproj \
+           -configuration Release \
+           CODE_SIGNING_REQUIRED=NO \
+           CODE_SIGN_IDENTITY="" \
+           ARCHS=x86_64 \
+           build
+```
+
+The built kernel extension will be located at:
+```
+build/Release/MacPmem.kext
+```
+
+### Notes
+
+- Code signing is disabled for development builds
+- The project is configured for x86_64 architecture only
+- ARM64 builds require fixes to inline assembly code in `cpu.c`
+- Modern Xcode versions may require higher deployment targets
+
 It exposes two devices:
 
  - /dev/pmem  # Physical memory read access (can be built with write support).

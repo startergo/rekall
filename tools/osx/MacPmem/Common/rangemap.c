@@ -160,7 +160,7 @@ static inline unsigned pmem_rangemap_room(pmem_rangemap *rangemap) {
         pmem_fatal("Negative room in rangemap %p. This should never happen.",
                    rangemap);
 #ifdef KERNEL
-        panic((Negative room in rangemap. This should never happen.));
+        panic(("Negative room in rangemap. This should never happen."));
 #endif
     }
 
